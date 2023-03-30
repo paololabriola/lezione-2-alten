@@ -1,4 +1,4 @@
-package pawtropolis.game.map.domain;
+package pawtropolis.map.domain;
 
 import pawtropolis.game.model.implementation.Item;
 import pawtropolis.zoo.model.abstractation.Animal;
