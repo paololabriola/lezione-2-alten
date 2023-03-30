@@ -2,7 +2,7 @@ package pawtropolis.animals.model.abstractation;
 
 import java.time.LocalDate;
 
-public class Animal {
+public abstract class Animal {
 
     //Class attributes
     private String name;
