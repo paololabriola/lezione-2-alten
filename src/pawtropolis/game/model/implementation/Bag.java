@@ -43,5 +43,13 @@ public class Bag {
     }
 
     //Other methods
+    public boolean isThereEnoughSlots(Item item){
+
+        if(availableSlots >= item.getRequiredSlots())
+            return true;
+        else
+            return false;
+
+    }
 
 }
