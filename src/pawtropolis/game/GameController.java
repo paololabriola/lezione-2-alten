@@ -18,4 +18,36 @@ public class GameController {
 
     }
 
+    //Other methods
+    public void runGame() {
+
+        Room currentRoom = entry;
+        boolean gameEnded = false;
+
+        while(!gameEnded) {
+
+            String input;
+            System.out.println("Where are you going to go?");
+            System.out.print(">");
+            input = InputController.readString();
+
+            switch (input) {
+
+                /*
+                 * Inserire qui la gestione degli altri comandi
+                 */
+
+                case "exit":
+                    gameEnded = true;
+                    break;
+
+            }
+
+            if (input.equals("exit"))
+                gameEnded = true;
+
+        }
+
+    }
+
 }
