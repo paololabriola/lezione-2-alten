@@ -1,4 +1,4 @@
-package src.pawtropolis.animals.model.abstractation;
+package pawtropolis.animals.model.abstractation;
 
 import java.time.LocalDate;
 
