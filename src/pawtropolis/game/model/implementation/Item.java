@@ -5,14 +5,14 @@ public class Item {
     //Attributes
     private String name;
     private String description;
-    private int slotRequired;
+    private int requiredSlots;
 
     //Constructor
     public Item(String name, String description, int slotRequired) {
 
         this.name = name;
         this.description = description;
-        this.slotRequired = slotRequired;
+        this.requiredSlots = slotRequired;
 
     }
 
@@ -33,12 +33,12 @@ public class Item {
         this.description = description;
     }
 
-    public int getSlotRequired() {
-        return slotRequired;
+    public int getRequiredSlots() {
+        return requiredSlots;
     }
 
-    public void setSlotRequired(int slotRequired) {
-        this.slotRequired = slotRequired;
+    public void setRequiredSlots(int requiredSlots) {
+        this.requiredSlots = requiredSlots;
     }
 
 }
