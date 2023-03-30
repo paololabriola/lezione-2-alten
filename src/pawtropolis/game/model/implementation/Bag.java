@@ -1,15 +1,15 @@
 package pawtropolis.game.model.implementation;
 
-import java.util.List;
+import java.util.Collection;
 
 public class Bag {
 
     //Attributes
     private int capacity;
-    private List<Item> items;
+    private Collection<Item> items;
 
     //Constructor
-    public Bag(int capacity, List<Item> items) {
+    public Bag(int capacity, Collection<Item> items) {
 
         this.capacity = capacity;
         this.items = items;
@@ -25,11 +25,11 @@ public class Bag {
         this.capacity = capacity;
     }
 
-    public List<Item> getItems() {
+    public Collection<Item> getItems() {
         return items;
     }
 
-    public void setItems(List<Item> items) {
+    public void setItems(Collection<Item> items) {
         this.items = items;
     }
 
