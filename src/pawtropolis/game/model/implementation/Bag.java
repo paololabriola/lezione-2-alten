@@ -34,6 +34,14 @@ public class Bag {
         this.items = items;
     }
 
+    public int getAvailableSlots() {
+        return availableSlots;
+    }
+
+    public void setAvailableSlots(int availableSlots) {
+        this.availableSlots = availableSlots;
+    }
+
     //Other methods
 
 }
