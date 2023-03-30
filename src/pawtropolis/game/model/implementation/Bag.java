@@ -6,13 +6,14 @@ public class Bag {
 
     //Attributes
     private int capacity;
+    private int availableSlots;
     private Collection<Item> items;
 
     //Constructor
-    public Bag(int capacity, Collection<Item> items) {
+    public Bag(int capacity) {
 
         this.capacity = capacity;
-        this.items = items;
+        this.availableSlots = capacity;
 
     }
 
@@ -32,5 +33,7 @@ public class Bag {
     public void setItems(Collection<Item> items) {
         this.items = items;
     }
+
+    //Other methods
 
 }
