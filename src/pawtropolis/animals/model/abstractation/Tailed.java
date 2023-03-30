@@ -1,6 +1,6 @@
 package pawtropolis.animals.model.abstractation;
 
-public class Tailed extends Animal {
+public abstract class Tailed extends Animal {
 
     //Class attributes
     private double tailLength;
