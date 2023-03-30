@@ -1,6 +1,6 @@
-package pawtropolis.animals.model.implementation;
+package pawtropolis.zoo.model.implementation;
 
-import pawtropolis.animals.model.abstractation.Tailed;
+import pawtropolis.zoo.model.abstractation.Tailed;
 
 public class Lion extends Tailed {
 

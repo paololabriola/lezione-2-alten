@@ -1,8 +1,8 @@
-package pawtropolis.animals.utils;
+package pawtropolis.zoo.utils;
 
-import pawtropolis.animals.model.abstractation.Animal;
-import pawtropolis.animals.model.abstractation.Tailed;
-import pawtropolis.animals.model.abstractation.Winged;
+import pawtropolis.zoo.model.abstractation.Animal;
+import pawtropolis.zoo.model.abstractation.Tailed;
+import pawtropolis.zoo.model.abstractation.Winged;
 
 import java.util.List;
 

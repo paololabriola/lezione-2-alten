@@ -1,6 +1,6 @@
-package pawtropolis.animals.model.implementation;
+package pawtropolis.zoo.model.implementation;
 
-import pawtropolis.animals.model.abstractation.Winged;
+import pawtropolis.zoo.model.abstractation.Winged;
 
 public class Eagle extends Winged {
 
