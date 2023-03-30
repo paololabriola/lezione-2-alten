@@ -26,4 +26,17 @@ public class Player extends Entity {
         this.bag = bag;
     }
 
+    //Other methods
+    public void pickupItem(Item item) {
+
+        bag.addItem(item);
+
+    }
+
+    public void dropItem(Item item) {
+
+        bag.removeItem(item);
+
+    }
+
 }
