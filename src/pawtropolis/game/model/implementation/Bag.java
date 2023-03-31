@@ -65,8 +65,13 @@ public class Bag {
 
     public void removeItem(Item item) {
 
-        if(items.remove(item))
+        if(items.remove(item)) {
+
             availableSlots += item.getRequiredSlots();
+            System.out.println("Item successfully removed from the bag.");
+
+        } else
+            System.out.println("Item not found in bag.");
 
     }
 
