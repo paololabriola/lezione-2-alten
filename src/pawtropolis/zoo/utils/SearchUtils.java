@@ -8,6 +8,10 @@ import java.util.List;
 
 public class SearchUtils {
 
+    private SearchUtils() {
+        throw new IllegalStateException("Utility class");
+    }
+
     public static Animal getShortest(List<Animal> animals){
 
         SortUtils.sortByHeight(animals);
@@ -34,9 +38,7 @@ public class SearchUtils {
 
     public static Animal getHeaviest(List<Animal> animals){
 
-        SortUtils.sortByWeight(animals);
-
-        return animals.get(animals.size() - 1);
+        return SortUtils.sortByWeight(animals).get(animals.size() - 1);
 
     }
 
