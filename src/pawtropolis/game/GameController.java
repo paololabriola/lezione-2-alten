@@ -43,9 +43,6 @@ public class GameController {
 
             }
 
-            if (input.equals("exit"))
-                gameEnded = true;
-
         }
 
     }
