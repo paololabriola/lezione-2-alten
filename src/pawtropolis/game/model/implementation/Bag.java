@@ -81,7 +81,7 @@ public class Bag {
 
         if(items.isEmpty()) {
 
-            System.out.println("The bag is Empty.");
+            System.out.println("The bag is empty.");
 
         } else {
 
