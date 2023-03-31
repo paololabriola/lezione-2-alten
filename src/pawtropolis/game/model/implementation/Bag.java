@@ -56,8 +56,10 @@ public class Bag {
 
             items.add(item);
             availableSlots -= item.getRequiredSlots();
+            System.out.println("Item successfully added to the bag.");
 
-        }
+        } else
+            System.out.println("Bag is full, the item couldn't be added to the inventory.");
 
     }
 
