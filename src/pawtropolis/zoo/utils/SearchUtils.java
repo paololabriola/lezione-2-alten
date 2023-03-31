@@ -26,9 +26,7 @@ public class SearchUtils {
 
     public static Animal getLightest(List<Animal> animals){
 
-        SortUtils.sortByWeight(animals);
-
-        return animals.get(0);
+        return SortUtils.sortByWeight(animals).get(0);
 
     }
 
