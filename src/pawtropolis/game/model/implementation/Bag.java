@@ -1,6 +1,7 @@
 package pawtropolis.game.model.implementation;
 
 import java.util.Collection;
+import java.util.Iterator;
 
 public class Bag {
 
@@ -64,6 +65,29 @@ public class Bag {
 
         if(items.remove(item))
             availableSlots += item.getRequiredSlots();
+
+    }
+
+    public void showItems() {
+
+        Iterator<Item> itemsIterator = items.iterator();
+
+        if(items.isEmpty()) {
+
+            System.out.println("The bag is Empty.");
+
+        } else {
+
+            System.out.println("The bag contains following items: ");
+            while(itemsIterator.hasNext()) {
+
+                System.out.println(itemsIterator.next().getName() + ", ");
+
+            }
+            System.out.println(itemsIterator.next().getName() + ".");
+
+        }
+
 
     }
 
