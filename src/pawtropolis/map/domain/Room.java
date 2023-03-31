@@ -47,4 +47,12 @@ public class Room {
         this.animals = animals;
     }
 
+    //Other methods
+    public void removeItem(Item item) {
+
+        if(!items.remove(item))
+            System.out.println("The item is not in the room.");
+
+    }
+
 }
