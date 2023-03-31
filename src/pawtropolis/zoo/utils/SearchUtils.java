@@ -20,9 +20,7 @@ public class SearchUtils {
 
     public static Animal getTallest(List<Animal> animals){
 
-        SortUtils.sortByHeight(animals);
-
-        return animals.get(animals.size() - 1);
+        return SortUtils.sortByHeight(animals).get(animals.size() - 1);
 
     }
 
