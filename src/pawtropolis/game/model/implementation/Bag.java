@@ -61,6 +61,10 @@ public class Bag {
     }
 
     public void removeItem(Item item) {
+
+        if(items.remove(item))
+            availableSlots += item.getRequiredSlots();
+
     }
 
 }
