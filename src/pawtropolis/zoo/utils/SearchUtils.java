@@ -14,9 +14,7 @@ public class SearchUtils {
 
     public static Animal getShortest(List<Animal> animals){
 
-        SortUtils.sortByHeight(animals);
-
-        return animals.get(0);
+        return SortUtils.sortByHeight(animals).get(0);
 
     }
 
