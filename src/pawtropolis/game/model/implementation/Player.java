@@ -39,4 +39,10 @@ public class Player extends Entity {
 
     }
 
+    public void showItemsInBag() {
+
+        bag.showItems();
+
+    }
+
 }
