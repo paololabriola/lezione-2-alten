@@ -45,17 +45,22 @@ public class Bag {
     //Other methods
     public boolean isThereEnoughSlots(Item item){
 
-        if(availableSlots >= item.getRequiredSlots())
-            return true;
-        else
-            return false;
+        return availableSlots >= item.getRequiredSlots();
 
     }
 
     public void addItem(Item item) {
+
+        if(isThereEnoughSlots(item)) {
+
+            items.add(item);
+            availableSlots -= item.getRequiredSlots();
+
+        }
+
     }
 
-    public void removeItem(Item item){
+    public void removeItem(Item item) {
     }
 
 }
