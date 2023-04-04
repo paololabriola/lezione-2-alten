@@ -7,6 +7,9 @@ import java.util.Arrays;
 
 public class InputController {
 
+    private InputController() {
+    }
+
     public static String readString() {
 
         InputStreamReader input = new InputStreamReader(System.in);
