@@ -66,6 +66,7 @@ public class Room {
 
         }
 
+        System.out.println("Item not found in the Room.");
         return null;
 
     }
