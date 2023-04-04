@@ -33,9 +33,9 @@ public class Player extends Entity {
 
     }
 
-    public void dropItem(Item item) {
+    public void dropItem(String itemName) {
 
-        bag.removeItem(item);
+        bag.removeItem(bag.findItemByName(itemName));
 
     }
 
