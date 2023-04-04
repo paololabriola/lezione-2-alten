@@ -1,24 +1,25 @@
 package pawtropolis.map.domain;
 
+import pawtropolis.game.model.abstractation.Entity;
 import pawtropolis.game.model.implementation.Item;
-import pawtropolis.zoo.model.abstractation.Animal;
 
 import java.util.Collection;
+import java.util.Iterator;
 
 public class Room {
 
     //Attributes
     private String name;
     private Collection<Item> items;
-    private Collection<Animal> animals;
+    private Collection<Entity> npcs;
 
     //Constructor
 
-    public Room(String name, Collection<Item> items, Collection<Animal> animals) {
+    public Room(String name, Collection<Item> items, Collection<Entity> npcs) {
 
         this.name = name;
         this.items = items;
-        this.animals = animals;
+        this.npcs = npcs;
 
     }
 
@@ -39,12 +40,12 @@ public class Room {
         this.items = items;
     }
 
-    public Collection<Animal> getAnimals() {
-        return animals;
+    public Collection<Entity> getNpcs() {
+        return npcs;
     }
 
-    public void setAnimals(Collection<Animal> animals) {
-        this.animals = animals;
+    public void setNpcs(Collection<Entity> npcs) {
+        this.npcs = npcs;
     }
 
     //Other methods
@@ -71,4 +72,60 @@ public class Room {
 
     }
 
+    public void showItems() {
+
+        Iterator<Item> itemsIterator = items.iterator();
+
+        if(items.isEmpty()) {
+
+            System.out.println("There is no item in the Room.");
+
+        } else {
+
+            while(itemsIterator.hasNext()) {
+
+                System.out.println(itemsIterator.next().getName() + ", ");
+
+            }
+
+            System.out.println(itemsIterator.next().getName() + ".");
+
+        }
+
+
+    }
+
+    public void showNPCs() {
+
+        Iterator<Entity> itemsIterator = npcs.iterator();
+
+        if(npcs.isEmpty()) {
+
+            System.out.println("There is no NPC in the room.");
+
+        } else {
+
+            while(itemsIterator.hasNext()) {
+
+                System.out.println(itemsIterator.next().getName() + ", ");
+
+            }
+
+            System.out.println(itemsIterator.next().getName() + ".");
+
+        }
+
+    }
+
+    public void getRoomDescription() {
+
+        System.out.println("You are in " + name + ".");
+
+        System.out.println("Items: ");
+        showItems();
+
+        System.out.println("NPC: ");
+        showNPCs();
+
+    }
 }
