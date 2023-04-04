@@ -98,4 +98,18 @@ public class Bag {
 
     }
 
+    public Item findItemByName(String itemName) {
+
+        for (Item item : items) {
+
+            if (item.getName().equals(itemName))
+                return item;
+
+        }
+
+        System.out.println("Item not found in the bag.");
+        return null;
+
+    }
+
 }
