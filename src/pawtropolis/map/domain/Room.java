@@ -4,7 +4,9 @@ import pawtropolis.game.model.abstractation.Entity;
 import pawtropolis.game.model.implementation.Item;
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 public class Room {
 
@@ -12,6 +14,7 @@ public class Room {
     private String name;
     private Collection<Item> items;
     private Collection<Entity> npcs;
+    private Map<Direction, Room> linkedRooms;
 
     //Constructor
 
@@ -20,6 +23,7 @@ public class Room {
         this.name = name;
         this.items = items;
         this.npcs = npcs;
+        this.linkedRooms = new HashMap<>();
 
     }
 
@@ -46,6 +50,14 @@ public class Room {
 
     public void setNpcs(Collection<Entity> npcs) {
         this.npcs = npcs;
+    }
+
+    public Map<Direction, Room> getLinkedRooms() {
+        return linkedRooms;
+    }
+
+    public void setLinkedRooms(Map<Direction, Room> linkedRooms) {
+        this.linkedRooms = linkedRooms;
     }
 
     //Other methods
