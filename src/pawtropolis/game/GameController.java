@@ -35,6 +35,9 @@ public class GameController {
 
             switch (commandFromString) {
 
+                default:
+                    System.out.println("Command \"" + commandFromString + "\" doesn't exist. Try again with an existing command.");
+
                 case "get":
                     currentRoom.removeItem(commandObject);
                     player.pickupItem(currentRoom.findItemByName(commandObject));
