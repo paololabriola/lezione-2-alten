@@ -53,6 +53,7 @@ public class GameController {
                     break;
 
                 case "drop":
+                    player.dropItem(commandObject);
                     break;
 
 
