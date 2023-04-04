@@ -50,4 +50,12 @@ public class InputController {
 
     }
 
+    public static String getCommandObjectFromString(String input) {
+
+        String[] inputStrings = input.split(" ");
+
+        return inputStrings[1];
+
+    }
+
 }
