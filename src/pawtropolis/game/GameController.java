@@ -1,6 +1,7 @@
 package pawtropolis.game;
 
 import pawtropolis.game.console.InputController;
+import pawtropolis.game.model.implementation.Item;
 import pawtropolis.game.model.implementation.Player;
 import pawtropolis.map.domain.Room;
 
@@ -53,7 +54,8 @@ public class GameController {
                     break;
 
                 case "drop":
-                    player.dropItem(commandObject);
+                    Item droppedItem = player.dropItem(commandObject);
+                    currentRoom.addItem(droppedItem);
                     break;
 
 
