@@ -147,4 +147,22 @@ public class Room {
 
     }
 
+    public void linkRoom(Direction direction, Room room) {
+        linkedRooms.put(direction, room);
+        room.linkedRooms.put(direction.getOppositeDirection(), this);
+    }
+
+    public void unlinkRoom(Direction direction) {
+        Room linkedRoom = linkedRooms.get(direction);
+        if (linkedRoom != null) {
+            linkedRoom.linkedRooms.remove(direction.getOppositeDirection());
+            linkedRooms.remove(direction);
+        }
+    }
+
+    public Room getLinkedRoom(Direction direction) {
+        return linkedRooms.get(direction);
+    }
+
 }
+
