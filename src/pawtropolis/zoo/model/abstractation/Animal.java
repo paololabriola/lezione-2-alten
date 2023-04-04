@@ -1,11 +1,12 @@
 package pawtropolis.zoo.model.abstractation;
 
+import pawtropolis.game.model.abstractation.Entity;
+
 import java.time.LocalDate;
 
-public abstract class Animal {
+public abstract class Animal extends Entity {
 
     //Class attributes
-    private String name;
 
     private String favouriteFood;
 
@@ -18,40 +19,32 @@ public abstract class Animal {
     private double height;
 
     //Class constructor
-    public Animal(String nameOfTheSpecimen, String favouriteFoodOfTheSpecimen, int ageOfTheSpecimen, double weightOfTheSpecimen, double heightOfTheSpecimen) {
+    public Animal(String name, int healthPoints, String favouriteFood, int age, double weight, double height) {
 
-        this.name = nameOfTheSpecimen;
-        this.favouriteFood = favouriteFoodOfTheSpecimen;
-        this.age = ageOfTheSpecimen;
+        super(name, healthPoints);
+        this.favouriteFood = favouriteFood;
+        this.age = age;
         this.importDate = LocalDate.now();
-        this.weight = weightOfTheSpecimen;
-        this.height = heightOfTheSpecimen;
+        this.weight = weight;
+        this.height = height;
 
     }
 
-    public Animal(String nameOfTheSpecimen, String favouriteFoodOfTheSpecimen, int ageOfTheSpecimen, LocalDate importDateOfTheSpecimen, double weightOfTheSpecimen, double heightOfTheSpecimen) {
-        this.name = nameOfTheSpecimen;
-        this.favouriteFood = favouriteFoodOfTheSpecimen;
-        this.age = ageOfTheSpecimen;
-        this.importDate = importDateOfTheSpecimen;
-        this.weight = weightOfTheSpecimen;
-        this.height = heightOfTheSpecimen;
+    public Animal(String name, int healthPoints, String favouriteFood, int age, LocalDate importDate, double weight, double height) {
+        super(name, healthPoints);
+        this.favouriteFood = favouriteFood;
+        this.age = age;
+        this.importDate = importDate;
+        this.weight = weight;
+        this.height = height;
     }
 
     //Class methods getter and setter
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String nameOfTheSpecimen) {
-        this.name = nameOfTheSpecimen;
-    }
-
     public String getFavouriteFood() {
         return favouriteFood;
     }
 
-    public void setFavouriteFood(String favouriteFoodOfTheSpecimen) {
+    public void setFavouriteFood(String favouriteFood) {
         this.favouriteFood = favouriteFood;
     }
 
@@ -75,15 +68,15 @@ public abstract class Animal {
         return weight;
     }
 
-    public void setWeight(double weightOfTheSpecimen) {
-        this.weight = weightOfTheSpecimen;
+    public void setWeight(double weight) {
+        this.weight = weight;
     }
 
     public double getHeight() {
         return height;
     }
 
-    public void setHeight(double heightOfTheSpecimen) {
+    public void setHeight(double height) {
         this.height = height;
     }
 
