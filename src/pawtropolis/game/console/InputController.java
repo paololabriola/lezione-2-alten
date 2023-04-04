@@ -29,24 +29,9 @@ public class InputController {
 
     public static String getCommandFromString(String input) {
 
-       char[] inputToChar = input.toCharArray();
-       char[] command = new char[inputToChar.length];
-       int count = 0;
+        String[] inputStrings = input.split(" ");
 
-        for(char c: inputToChar) {
-
-            if(c == ' ')
-                break;
-            else {
-
-                command[count] = c;
-                count++;
-
-            }
-
-        }
-
-        return Arrays.toString(command);
+        return inputStrings[0];
 
     }
 
