@@ -38,8 +38,8 @@ public class GameController {
                 default:
                     System.out.println("Command \"" + commandFromString + "\" doesn't exist. Try again with an existing command.");
 
-                case "":
-
+                case "bag":
+                    player.getBag().showItems();
 
                 case "look":
                     currentRoom.getRoomDescription();
