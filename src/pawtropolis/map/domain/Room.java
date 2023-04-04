@@ -58,6 +58,12 @@ public class Room {
 
     }
 
+    public void addItem(Item item) {
+
+        items.add(item);
+
+    }
+
     public Item findItemByName(String itemName) {
 
         for (Item item : items) {
@@ -128,4 +134,5 @@ public class Room {
         showNPCs();
 
     }
+
 }
