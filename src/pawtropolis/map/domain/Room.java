@@ -48,10 +48,25 @@ public class Room {
     }
 
     //Other methods
-    public void removeItem(Item item) {
+    public void removeItem(String itemName) {
+
+        Item item = findItemByName(itemName);
 
         if(!items.remove(item))
             System.out.println("The item is not in the room.");
+
+    }
+
+    public Item findItemByName(String itemName) {
+
+        for (Item item : items) {
+
+            if (item.getName().equals(itemName))
+                return item;
+
+        }
+
+        return null;
 
     }
 
