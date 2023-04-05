@@ -52,16 +52,19 @@ public class Bag {
 
     }
 
-    public void addItem(Item item) {
+    public boolean addItem(Item item) {
 
         if(isThereEnoughSlots(item)) {
 
             items.add(item);
             availableSlots -= item.getRequiredSlots();
             System.out.println("Item successfully added to the bag.");
+            return true;
 
         } else
             System.out.println("Bag is full, the item couldn't be added to the inventory.");
+
+        return false;
 
     }
 
