@@ -47,6 +47,7 @@ public class GameController {
                     Room nextRoom = currentRoom.getLinkedRoom(direction);
                     if (nextRoom != null) {
                         System.out.println("Moving to " + direction.getName() + " room: " + nextRoom.getName());
+                        nextRoom.getRoomDescription();
                         currentRoom = nextRoom;
                     } else {
                         System.out.println("There is no room in that direction.");
@@ -62,8 +63,8 @@ public class GameController {
                     break;
 
                 case "get":
-                    currentRoom.removeItem(commandObject);
                     player.pickupItem(currentRoom.findItemByName(commandObject));
+                    currentRoom.removeItem(commandObject);
                     break;
 
                 case "drop":
@@ -73,6 +74,7 @@ public class GameController {
 
                 case "help":
                     System.out.println("Commands are: go <direction>, bag, look, get <item>, drop <item>, exit.");
+                    break;
 
                 case "exit":
                     gameEnded = true;
