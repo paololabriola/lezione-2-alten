@@ -56,8 +56,8 @@ public class GameController {
                 case "look" -> currentRoom.getRoomDescription();
 
                 case "get" -> {
-                    player.pickupItem(currentRoom.findItemByName(commandObject));
-                    currentRoom.removeItem(commandObject);
+                    if(player.pickupItem(currentRoom.findItemByName(commandObject)))
+                        currentRoom.removeItem(commandObject);
                 }
 
                 case "drop" -> {
