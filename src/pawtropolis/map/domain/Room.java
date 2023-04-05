@@ -3,22 +3,19 @@ package pawtropolis.map.domain;
 import pawtropolis.game.model.abstractation.Entity;
 import pawtropolis.game.model.implementation.Item;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
-public class Room <T extends Entity> {
+public class Room {
 
     //Attributes
     private String name;
     private Collection<Item> items;
-    private Collection<T> npcs;
+    private Collection<? extends Entity> npcs;
     private Map<Direction, Room> linkedRooms;
 
     //Constructor
 
-    public Room(String name, Collection<Item> items, Collection<T> npcs) {
+    public Room(String name, Collection<Item> items, Collection<? extends Entity> npcs) {
 
         this.name = name;
         this.items = items;
@@ -44,11 +41,11 @@ public class Room <T extends Entity> {
         this.items = items;
     }
 
-    public Collection<T> getNpcs() {
+    public Collection<? extends Entity> getNpcs() {
         return npcs;
     }
 
-    public void setNpcs(Collection<T> npcs) {
+    public void setNpcs(Collection<? extends Entity> npcs) {
         this.npcs = npcs;
     }
 
@@ -120,7 +117,7 @@ public class Room <T extends Entity> {
 
     public void showNPCs() {
 
-        Iterator<T> npcsIterator = npcs.iterator();
+        Iterator<? extends Entity> npcsIterator = npcs.iterator();
 
         if(npcs.isEmpty()) {
 
