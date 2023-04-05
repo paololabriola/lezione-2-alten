@@ -38,11 +38,8 @@ public class GameController {
 
             switch (commandFromString) {
 
-                default:
-                    System.out.println("Command \"" + commandFromString + "\" doesn't exist. Try again with an existing command.");
-                    break;
-
-                case "go":
+                case "go" -> {
+                    assert commandObject != null;
                     Direction direction = Direction.valueOf(commandObject.toUpperCase());
                     Room nextRoom = currentRoom.getLinkedRoom(direction);
                     if (nextRoom != null) {
@@ -52,33 +49,29 @@ public class GameController {
                     } else {
                         System.out.println("There is no room in that direction.");
                     }
-                    break;
+                }
 
-                case "bag":
-                    player.getBag().showItems();
-                    break;
+                case "bag" -> player.getBag().showItems();
 
-                case "look":
-                    currentRoom.getRoomDescription();
-                    break;
+                case "look" -> currentRoom.getRoomDescription();
 
-                case "get":
+                case "get" -> {
                     player.pickupItem(currentRoom.findItemByName(commandObject));
                     currentRoom.removeItem(commandObject);
-                    break;
+                }
 
-                case "drop":
+                case "drop" -> {
                     Item droppedItem = player.dropItem(commandObject);
                     currentRoom.addItem(droppedItem);
-                    break;
+                }
 
-                case "help":
-                    System.out.println("Commands are: go <direction>, bag, look, get <item>, drop <item>, exit.");
-                    break;
+                case "help" ->
+                        System.out.println("Commands are: go <direction>, bag, look, get <item>, drop <item>, exit.");
 
-                case "exit":
-                    gameEnded = true;
-                    break;
+                case "exit" -> gameEnded = true;
+
+                default ->
+                        System.out.println("Command \"" + commandFromString + "\" doesn't exist. Try again with an existing command.");
 
             }
 
