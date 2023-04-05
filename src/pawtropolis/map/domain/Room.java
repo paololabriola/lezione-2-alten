@@ -8,17 +8,17 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-public class Room {
+public class Room <T extends Entity> {
 
     //Attributes
     private String name;
     private Collection<Item> items;
-    private Collection<Entity> npcs;
+    private Collection<T> npcs;
     private Map<Direction, Room> linkedRooms;
 
     //Constructor
 
-    public Room(String name, Collection<Item> items, Collection<Entity> npcs) {
+    public Room(String name, Collection<Item> items, Collection<T> npcs) {
 
         this.name = name;
         this.items = items;
@@ -44,11 +44,11 @@ public class Room {
         this.items = items;
     }
 
-    public Collection<Entity> getNpcs() {
+    public Collection<T> getNpcs() {
         return npcs;
     }
 
-    public void setNpcs(Collection<Entity> npcs) {
+    public void setNpcs(Collection<T> npcs) {
         this.npcs = npcs;
     }
 
@@ -65,7 +65,9 @@ public class Room {
 
         Item item = findItemByName(itemName);
 
-        if(!items.remove(item))
+        if(items.remove(item))
+            System.out.println("Item successfully removed from the room.");
+        else
             System.out.println("The item is not in the room.");
 
     }
@@ -102,34 +104,41 @@ public class Room {
 
             while(itemsIterator.hasNext()) {
 
-                System.out.println(itemsIterator.next().getName() + ", ");
+                System.out.print(itemsIterator.next().getName());
+
+                if(itemsIterator.hasNext()) {
+                    System.out.print(", ");
+                }
 
             }
 
-            System.out.println(itemsIterator.next().getName() + ".");
+            System.out.println(".");
 
         }
-
 
     }
 
     public void showNPCs() {
 
-        Iterator<Entity> itemsIterator = npcs.iterator();
+        Iterator<T> npcsIterator = npcs.iterator();
 
         if(npcs.isEmpty()) {
 
             System.out.println("There is no NPC in the room.");
 
-        } else {
+        }  else {
 
-            while(itemsIterator.hasNext()) {
+            while(npcsIterator.hasNext()) {
 
-                System.out.println(itemsIterator.next().getName() + ", ");
+                System.out.print(npcsIterator.next().getName());
+
+                if(npcsIterator.hasNext()) {
+                    System.out.print(", ");
+                }
 
             }
 
-            System.out.println(itemsIterator.next().getName() + ".");
+            System.out.println(".");
 
         }
 
