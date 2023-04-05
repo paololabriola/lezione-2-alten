@@ -1,5 +1,6 @@
 package pawtropolis.game.model.implementation;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
@@ -15,6 +16,7 @@ public class Bag {
 
         this.capacity = capacity;
         this.availableSlots = capacity;
+        this.items = new ArrayList<>();
 
     }
 
@@ -88,13 +90,17 @@ public class Bag {
             System.out.println("The bag contains following items: ");
             while(itemsIterator.hasNext()) {
 
-                System.out.println(itemsIterator.next().getName() + ", ");
+                System.out.print(itemsIterator.next().getName());
+
+                if(itemsIterator.hasNext()) {
+                    System.out.print(", ");
+                }
 
             }
-            System.out.println(itemsIterator.next().getName() + ".");
+
+            System.out.println(".");
 
         }
-
 
     }
 
