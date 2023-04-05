@@ -6,9 +6,9 @@ public abstract class Winged extends Animal {
     private double wingSpan;
 
     //Constructor method of the class
-    public Winged(String name, String favouriteFood, int age, double weight, double height, double wingSpan) {
+    public Winged(String name, int healthPoints, String favouriteFood, int age, double weight, double height, double wingSpan) {
 
-        super(name, favouriteFood, age, weight, height);
+        super(name, healthPoints, favouriteFood, age, weight, height);
         this.wingSpan = wingSpan;
 
     }
