@@ -20,7 +20,7 @@ public class Room {
         this.name = name;
         this.items = items;
         this.npcs = npcs;
-        this.linkedRooms = new HashMap<>();
+        this.linkedRooms = new EnumMap<>(Direction.class);
 
     }
 
