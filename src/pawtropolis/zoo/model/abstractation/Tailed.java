@@ -6,7 +6,7 @@ public abstract class Tailed extends Animal {
     private double tailLength;
 
     //Constructor method of the class
-    public Tailed(String name, int healthPoints, String favouriteFood, int age, double weight, double height, double tailLength) {
+    protected Tailed(String name, int healthPoints, String favouriteFood, int age, double weight, double height, double tailLength) {
 
         super(name, healthPoints, favouriteFood, age, weight, height);
         this.tailLength = tailLength;

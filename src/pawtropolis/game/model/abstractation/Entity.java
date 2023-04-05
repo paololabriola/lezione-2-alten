@@ -7,7 +7,7 @@ public abstract class Entity {
     private int healthPoints;
 
     //Constructor
-    public Entity(String name, int healthPoints) {
+    protected Entity(String name, int healthPoints) {
 
         this.name = name;
         this.healthPoints = healthPoints;

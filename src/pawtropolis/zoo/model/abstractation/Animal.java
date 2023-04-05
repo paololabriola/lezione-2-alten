@@ -19,7 +19,7 @@ public abstract class Animal extends Entity {
     private double height;
 
     //Class constructor
-    public Animal(String name, int healthPoints, String favouriteFood, int age, double weight, double height) {
+    protected Animal(String name, int healthPoints, String favouriteFood, int age, double weight, double height) {
 
         super(name, healthPoints);
         this.favouriteFood = favouriteFood;
@@ -30,7 +30,7 @@ public abstract class Animal extends Entity {
 
     }
 
-    public Animal(String name, int healthPoints, String favouriteFood, int age, LocalDate importDate, double weight, double height) {
+    protected Animal(String name, int healthPoints, String favouriteFood, int age, LocalDate importDate, double weight, double height) {
         super(name, healthPoints);
         this.favouriteFood = favouriteFood;
         this.age = age;

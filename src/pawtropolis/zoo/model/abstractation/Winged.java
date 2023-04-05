@@ -6,7 +6,7 @@ public abstract class Winged extends Animal {
     private double wingSpan;
 
     //Constructor method of the class
-    public Winged(String name, int healthPoints, String favouriteFood, int age, double weight, double height, double wingSpan) {
+    protected Winged(String name, int healthPoints, String favouriteFood, int age, double weight, double height, double wingSpan) {
 
         super(name, healthPoints, favouriteFood, age, weight, height);
         this.wingSpan = wingSpan;
