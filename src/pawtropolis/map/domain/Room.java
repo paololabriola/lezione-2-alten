@@ -72,7 +72,7 @@ public class Room {
     public void addItem(Item item) {
 
         items.add(item);
-        System.out.println("Item successfully added from the room.");
+        System.out.println("Item successfully added to the room.");
 
     }
 
