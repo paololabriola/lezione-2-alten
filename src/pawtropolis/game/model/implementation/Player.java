@@ -29,10 +29,7 @@ public class Player extends Entity {
     //Other methods
     public boolean pickupItem(Item item) {
 
-        if(bag.addItem(item))
-            return true;
-        else
-            return false;
+        return bag.addItem(item);
 
     }
 
