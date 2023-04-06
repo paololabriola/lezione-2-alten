@@ -116,7 +116,6 @@ public class Bag {
 
         }
 
-        System.out.println("Item not found in the bag.");
         return null;
 
     }
