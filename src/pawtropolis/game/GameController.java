@@ -41,7 +41,6 @@ public class GameController {
                 case "go" -> {
 
                     if(commandObject != null) {
-                        assert commandObject != null;
 
                         try {
 
@@ -81,8 +80,17 @@ public class GameController {
                 }
 
                 case "drop" -> {
-                    Item droppedItem = player.dropItem(commandObject);
-                    currentRoom.addItem(droppedItem);
+
+                    if(commandObject != null) {
+
+                        Item droppedItem = player.dropItem(commandObject);
+
+                        if(droppedItem != null)
+                            currentRoom.addItem(droppedItem);
+
+                    } else
+                        System.out.println("You must select an item.");
+
                 }
 
                 case "help" ->
