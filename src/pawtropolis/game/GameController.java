@@ -39,16 +39,29 @@ public class GameController {
             switch (commandFromString) {
 
                 case "go" -> {
-                    assert commandObject != null;
-                    Direction direction = Direction.valueOf(commandObject.toUpperCase());
-                    Room nextRoom = currentRoom.getLinkedRoom(direction);
-                    if (nextRoom != null) {
-                        System.out.println("Moving to " + direction.getName() + " room: " + nextRoom.getName());
-                        nextRoom.getRoomDescription();
-                        currentRoom = nextRoom;
-                    } else {
-                        System.out.println("There is no room in that direction.");
-                    }
+
+                    if(commandObject != null) {
+                        assert commandObject != null;
+
+                        try {
+
+                            Direction direction = Direction.valueOf(commandObject.toUpperCase());
+                            Room nextRoom = currentRoom.getLinkedRoom(direction);
+                            if (nextRoom != null) {
+                                System.out.println("Moving to " + direction.getName() + " room: " + nextRoom.getName());
+                                nextRoom.getRoomDescription();
+                                currentRoom = nextRoom;
+                            } else {
+                                System.out.println("There is no room in that direction.");
+                            }
+
+                        } catch (IllegalArgumentException e) {
+                            System.out.println("You must select a valid direction.");
+                        }
+
+                    }else
+                        System.out.println("You must select a direction.");
+
                 }
 
                 case "bag" -> player.getBag().showItems();
@@ -56,8 +69,15 @@ public class GameController {
                 case "look" -> currentRoom.getRoomDescription();
 
                 case "get" -> {
-                    if(player.pickupItem(currentRoom.findItemByName(commandObject)))
-                        currentRoom.removeItem(commandObject);
+
+                    if(commandObject != null) {
+
+                        if(player.pickupItem(currentRoom.findItemByName(commandObject)))
+                            currentRoom.removeItem(commandObject);
+
+                    } else
+                        System.out.println("You must select an item.");
+
                 }
 
                 case "drop" -> {
