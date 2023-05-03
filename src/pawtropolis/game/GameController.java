@@ -8,12 +8,15 @@ import pawtropolis.map.MapController;
 import pawtropolis.map.model.Direction;
 import pawtropolis.map.model.Room;
 
+import lombok.Getter;
+
 public class GameController {
 
     //Attributes
     private static GameController instance;
     private final MapController mapController;
     private boolean gameEnded;
+    @Getter
     private Player player;
 
     //Constructor
@@ -32,11 +35,6 @@ public class GameController {
     public Room getCurrentRoom() {
         return mapController.getCurrentRoom();
     }
-
-    public Player getPlayer() {
-        return player;
-    }
-
 
     //Other methods
     public boolean changeRoom(Direction direction) {
