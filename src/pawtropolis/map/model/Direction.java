@@ -1,4 +1,4 @@
-package pawtropolis.map.domain;
+package pawtropolis.map.model;
 
 public enum Direction {
 
