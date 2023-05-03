@@ -3,7 +3,6 @@ package pawtropolis.game.console;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 
 public class InputController {
 
@@ -24,22 +23,6 @@ public class InputController {
             return "";
 
         }
-
-    }
-
-    public static String getCommandFromString(String input) {
-
-        String[] inputStrings = input.split(" ");
-
-        return inputStrings[0];
-
-    }
-
-    public static String getCommandObjectFromString(String input) {
-
-        String[] inputStrings = input.split(" ");
-
-        return inputStrings[1];
 
     }
 
