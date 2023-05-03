@@ -4,14 +4,19 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Bag {
 
     //Attributes
     private int capacity;
+    @Getter
     private int availableSlots;
     private Collection<Item> items;
 
-    //Constructor
     public Bag(int capacity) {
 
         this.capacity = capacity;
@@ -20,28 +25,6 @@ public class Bag {
 
     }
 
-    //Getters and setters
-    public int getCapacity() {
-        return capacity;
-    }
-
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
-
-    public Collection<Item> getItems() {
-        return items;
-    }
-
-    public void setItems(Collection<Item> items) {
-        this.items = items;
-    }
-
-    public int getAvailableSlots() {
-        return availableSlots;
-    }
-
-    //Other methods
     public boolean isThereEnoughSlots(Item item){
 
         return availableSlots >= item.getRequiredSlots();
