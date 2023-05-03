@@ -14,7 +14,12 @@ public class Room {
     private Map<Direction, Room> linkedRooms;
 
     //Constructor
-
+    public Room(String name) {
+        this.name = name;
+        this.items = new ArrayList<>();
+        this.npcs = new ArrayList<>();
+        this.linkedRooms = new EnumMap<>(Direction.class);
+    }
     public Room(String name, Collection<Item> items, Collection<? extends Entity> npcs) {
 
         this.name = name;
