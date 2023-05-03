@@ -41,10 +41,6 @@ public class Bag {
         return availableSlots;
     }
 
-    public void setAvailableSlots(int availableSlots) {
-        this.availableSlots = availableSlots;
-    }
-
     //Other methods
     public boolean isThereEnoughSlots(Item item){
 
