@@ -1,5 +1,10 @@
 package pawtropolis.zoo.model.abstractation;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public abstract class Tailed extends Animal {
 
     //Class attributes
@@ -11,15 +16,6 @@ public abstract class Tailed extends Animal {
         super(name, healthPoints, favouriteFood, age, weight, height);
         this.tailLength = tailLength;
 
-    }
-
-    //Class methods getter and setter
-    public double getTailLength() {
-        return tailLength;
-    }
-
-    public void setTailLength(double tailLength) {
-        this.tailLength = tailLength;
     }
 
 }
