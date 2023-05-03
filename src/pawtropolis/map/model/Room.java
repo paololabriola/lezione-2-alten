@@ -1,4 +1,4 @@
-package pawtropolis.map.domain;
+package pawtropolis.map.model;
 
 import pawtropolis.game.model.abstractation.Entity;
 import pawtropolis.game.model.implementation.Item;
@@ -58,14 +58,15 @@ public class Room {
     }
 
     //Other methods
-    public void removeItem(String itemName) {
+    public void removeItem(Item item) {
 
-        Item item = findItemByName(itemName);
-
-        if(items.remove(item))
+        if(item != null) {
+            items.remove(item);
             System.out.println("Item successfully removed from the room.");
-        else
+        }
+        else {
             System.out.println("The item is not in the room.");
+        }
 
     }
 
@@ -75,7 +76,6 @@ public class Room {
         System.out.println("Item successfully added to the room.");
 
     }
-
     public Item findItemByName(String itemName) {
 
         for (Item item : items) {
@@ -142,7 +142,7 @@ public class Room {
 
     }
 
-    public void getRoomDescription() {
+    public void getDescription() {
 
         System.out.println("You are in " + name + ".");
 
