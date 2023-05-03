@@ -1,11 +1,13 @@
 package pawtropolis.zoo.model.abstractation;
 
-public abstract class Winged extends Animal {
+import lombok.Getter;
+import lombok.Setter;
 
-    //Class attributes
+@Getter
+@Setter
+public abstract class Winged extends Animal {
     private double wingSpan;
 
-    //Constructor method of the class
     protected Winged(String name, int healthPoints, String favouriteFood, int age, double weight, double height, double wingSpan) {
 
         super(name, healthPoints, favouriteFood, age, weight, height);
@@ -13,13 +15,5 @@ public abstract class Winged extends Animal {
 
     }
 
-    //Class methods getter and setter
-    public double getWingSpan() {
-        return wingSpan;
-    }
-
-    public void setWingSpan(double wingSpan) {
-        this.wingSpan = wingSpan;
-    }
 
 }
