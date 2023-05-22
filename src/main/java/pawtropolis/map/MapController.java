@@ -1,25 +1,23 @@
 package pawtropolis.map;
 
+import org.springframework.stereotype.Component;
 import pawtropolis.game.model.implementation.Item;
 import pawtropolis.map.model.Direction;
 import pawtropolis.map.model.Room;
-import pawtropolis.zoo.model.abstractation.Animal;
 import pawtropolis.zoo.model.implementation.Tiger;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class MapController {
     private Room currentRoom;
-
-    public MapController() {
+    private MapController() {
         currentRoom = createMap();
     }
-
     public Room getCurrentRoom() {
         return currentRoom;
     }
-
     public boolean changeRoom(Direction direction) {
         Room nextRoom = currentRoom.getLinkedRoom(direction);
         if (nextRoom != null) {
@@ -44,6 +42,4 @@ public class MapController {
 
         return entrance;
     }
-
-
 }

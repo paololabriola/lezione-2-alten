@@ -10,7 +10,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Bag {
-
     //Attributes
     private int capacity;
     @Getter

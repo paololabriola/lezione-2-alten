@@ -1,18 +1,21 @@
 package pawtropolis.game.command.domain;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import pawtropolis.game.GameController;
 import pawtropolis.game.model.implementation.Item;
-
+@Component
 public class GetCommand extends ParametrizedCommand {
+    @Autowired
     public GetCommand(GameController gameController) {
         super(gameController);
     }
 
-    public GetCommand(GameController gameController, String parameter) {
-        super(gameController, parameter);
-    }
     @Override
-    protected void execute() {
+    public boolean execute() {
+        if(!super.execute()) {
+            return false;
+        }
         String itemName = parameter;
         Item item = gameController.getCurrentRoom().findItemByName(itemName);
         if(item != null) {
@@ -21,6 +24,7 @@ public class GetCommand extends ParametrizedCommand {
         } else {
             System.out.println("Item not found in current room.");
         }
+        return true;
     }
     @Override
     public String getTriggerName() {

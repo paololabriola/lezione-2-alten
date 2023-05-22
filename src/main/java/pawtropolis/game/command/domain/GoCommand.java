@@ -1,19 +1,20 @@
 package pawtropolis.game.command.domain;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import pawtropolis.game.GameController;
 import pawtropolis.map.model.Direction;
-
+@Component
 public class GoCommand extends ParametrizedCommand {
+    @Autowired
     public GoCommand(GameController gameController) {
         super(gameController);
     }
-
-    public GoCommand(GameController gameController, String parameter) {
-        super(gameController, parameter);
-    }
-
     @Override
-    protected void execute() {
+    public boolean execute() {
+        if(!super.execute()) {
+            return false;
+        }
         try {
             Direction direction = Direction.valueOf(parameter.toUpperCase());
             if(gameController.changeRoom(direction)) {
@@ -25,7 +26,7 @@ public class GoCommand extends ParametrizedCommand {
         } catch (IllegalArgumentException e) {
             System.out.println("You must select a valid direction.");
         }
-
+        return true;
     }
     @Override
     public String getTriggerName() {

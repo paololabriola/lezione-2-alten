@@ -22,9 +22,11 @@ public abstract class ParametrizedCommand extends Command {
     }
 
     @Override
-    protected void execute() {
+    public boolean execute() {
         if (parameter == null || parameter.isEmpty()) {
             System.out.println("Missing parameter for command.");
+            return false;
         }
+        return true;
     }
 }
